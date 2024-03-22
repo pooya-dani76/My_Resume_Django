@@ -1,7 +1,7 @@
 from django.http import HttpRequest
 from django.shortcuts import render
 from django.views import View
-from .models import MyInfo, Services
+from .models import MyInfoModel, ServicesModel
 from utils.services import divideList
 
 
@@ -10,8 +10,8 @@ class HomeView(View):
         pass
 
     def get(self, request: HttpRequest):
-        info = MyInfo.objects.filter(is_active=True).first()
-        services = divideList(obj_list=list(Services.objects.all()), division_to=4)
+        info = MyInfoModel.objects.filter(is_active=True).first()
+        services = divideList(obj_list=list(ServicesModel.objects.filter(is_active=True)), division_to=4)
         context = {
             "info": info,
             "services": services,

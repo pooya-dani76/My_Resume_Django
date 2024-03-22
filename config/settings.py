@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # internal
     'info_module',
+    'custom_tags',
     # external
     'sorl.thumbnail',
     'django_render_partial'

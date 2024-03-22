@@ -12,7 +12,9 @@
 	{% include "includes/intro.html" with info=info %}
 </section>
 <section class="services two gap">
+	{% if services %}
 	{% include "includes/services.html" %}
+	{% endif %}
 </section>
 <section class="my-project hom3 two gap no-top">
 	<div class="container">
@@ -105,16 +107,6 @@
 					<a href="#" class="magic-hover magic-hover__square button button--moema button--text-thick button--text-upper button--size-s"><i class="fa-solid fa-spinner"></i> Load More</a>
 				</div>
 	  </div>	
-</section>
-<section class="creative-together gap no-top" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300"> 
-	<div class="container">
-		<div class="gap contact-info-home-two" style="background-image: url(https://via.placeholder.com/1290x530)">
-			<h2>Let's Create Something
-					Creative Together</h2>
-			<p>We can't wait to hear from making something beautiful and new! </p>
-			<a href="javascript:void(0)" class="lightbox-toggle  magic-hover magic-hover__square button download  button--moema button--text-thick button--text-upper button--size-s"><i class="fa-solid fa-download"></i>Start Consulting</a>
-		</div>
-	</div>
 </section>
 <section class="work-experience-two gap" style="background-image: url(./static/img/blur-1.png)">
 	<div class="container">
@@ -232,92 +224,6 @@
 	  </div>
 	</div>
 </section>
-<section class="pricing-plans gap no-bottom">
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
-				<div class="hading">
-					<p>Work Packages</p>
-					<h2>Pricing Plans</h2>
-					<h6>Lorem ipm dolor amet, cons magm maiores Ipsa 
-						dolor sitmagnam maores. Lorem ipm dolor amet, 
-						cons magm maiores Ipsa dolor sitma.</h6>
-				</div>
-			</div>
-			<div class="offset-xl-1 col-xl-7 ">
-				<div class="row">
-					<div class="col-lg-6" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="400">
-						<div class="pricing-plans-tabla">
-							<div class="basic-package" style="background-image: url(./static/img/home-2.jpg)">
-								<h5>Basic Package</h5>
-								<h3>$350 <span>/ month</span></h3>
-							</div>
-							<div class="rocket">
-								<span class="icon-rocket"></span>
-								<ul>
-									<li><i class="fa-solid fa-check"></i>Website Design</li>
-									<li><i class="fa-solid fa-check"></i>Graphic Designing</li>
-									<li><i class="fa-solid fa-check"></i>Web Development</li>
-									<li><i class="fa-solid fa-check"></i>Business Consulting</li>
-								</ul>
-								<a href="#" class="magic-hover magic-hover__square button download  button--moema button--text-thick button--text-upper button--size-s">Select Now</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6" data-aos="fade-up"  data-aos-delay="400" data-aos-duration="500">
-						<div class="pricing-plans-tabla">
-							<div class="basic-package" style="background-image: url(./static/img/home-2.jpg)">
-								<h5>Premium Package</h5>
-								<h3>$650 <span>/ month</span></h3>
-							</div>
-							<div class="rocket">
-								<span class="icon-rocket"></span>
-								<ul>
-									<li><i class="fa-solid fa-check"></i>Website Design</li>
-									<li><i class="fa-solid fa-check"></i>Graphic Designing</li>
-									<li><i class="fa-solid fa-check"></i>Web Development</li>
-									<li><i class="fa-solid fa-check"></i>Business Consulting</li>
-								</ul>
-								<a href="#" class="magic-hover magic-hover__square button download  button--moema button--text-thick button--text-upper button--size-s">Select Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<div class="clients-data">
-	<div class="container">
-		<div class="row client-logo owl-carousel owl-theme" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
-			<div class="col-lg-3 item">
-				<div class="clients-color">
-					<img alt="clients" src="https://via.placeholder.com/278x128">
-				</div>
-			</div>
-			<div class="col-lg-3 item">
-				<div class="clients-color">
-					<img alt="clients" src="https://via.placeholder.com/278x128">
-				</div>
-			</div>
-			<div class="col-lg-3 item">
-				<div class="clients-color">
-					<img alt="clients" src="https://via.placeholder.com/278x128">
-				</div>
-			</div>
-			<div class="col-lg-3 item">
-				<div class="clients-color">
-					<img alt="clients" src="https://via.placeholder.com/278x128">
-				</div>
-			</div>
-			<div class="col-lg-3 item">
-				<div class="clients-color">
-					<img alt="clients" src="https://via.placeholder.com/278x128">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <footer class="gap" style="background-image: url(./static/img/footer.png)">
 	<div class="container">
 		<div class="footer-data">
