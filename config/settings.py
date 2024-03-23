@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     # internal
     'info_module',
     'custom_tags',
+    'services_module',
+    'showcase_module',
+    'experience_module',
+    'home',
+    'article_module',
     # external
     'sorl.thumbnail',
     'django_render_partial'

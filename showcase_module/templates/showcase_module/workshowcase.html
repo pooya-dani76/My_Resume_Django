@@ -1,0 +1,52 @@
+{% load thumbnail %}
+
+<section class="my-project hom3 two gap no-top">
+	<div class="container">
+		<div class="hading" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+			<img alt="dots" src="static/img/dots.png">
+			<p>Collection of my project</p>
+			<h2>Work Showcase</h2>
+		</div>
+			<div class="row">
+
+                {% for work in work_cases %}
+                <div class="col-lg-4 col-md-6" data-aos="fade-up"  data-aos-delay="500" data-aos-duration="600">	
+                    <div class="portfolio-detail">
+                        <div class="portfolio-img hover06">
+                            <figure>
+                                {% if work.image %}
+                                {% thumbnail work.image "366x261" crop="center" as im %}
+                                    <img src="{{ im.url }}" />
+                                {% endthumbnail %}
+                                {% else %}
+                                <img alt="profile img" src="https://via.placeholder.com/366x261">
+                                {% endif %}
+                            </figure>
+                              <a class="magic-hover magic-hover__square" href="portfolio-details-1.html">{{work.title}}</a>
+                              <p>{{work.short_description}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                    
+			</div>
+            {% comment %} <div class="pagination">
+                <ul>
+                    <li class="prev">
+                        <a href="javascript:void(0)"> prev</a>
+                    </li>
+                    <li><a href="javascript:void(0)">1</a></li>
+                    <li><a href="javascript:void(0)">2</a></li>
+                    <li><a href="javascript:void(0)">3</a></li>
+                    <li><a href="javascript:void(0)">...</a></li>
+                    <li class="non"><a href="javascript:void(0)">16</a></li>
+                    <li class="prev">
+                        <a href="javascript:void(0)">next</a>
+                    </li>
+                </ul>
+            </div>
+	  </div>	 {% endcomment %}
+</section>
+
+

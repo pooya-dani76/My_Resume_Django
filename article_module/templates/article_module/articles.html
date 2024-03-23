@@ -1,0 +1,27 @@
+{% load thumbnail %}
+
+<section class="gap no-bottom" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+	<div class="container">
+		<div class="hading">
+			<p>News & Blog</p>
+			<h2>Recent Articles</h2>
+		</div>
+	  <div class="zoom-slider owl-carousel">
+        {% for article in articles %}
+        <div class="item zoom-slider-img">
+            {% if article.image %}
+            {% thumbnail article.image "649x395" crop="center" as im %}
+        <img src="{{ im.url }}" />
+        {% endthumbnail %}
+        {% else %}
+        <img src="https://via.placeholder.com/649x395" alt="img">
+            {% endif %}
+	    	<div class="zoom-slider-data">
+	    		<<span>{{article.date}}</span><div class="dodgap"></div><span>{{name}}</span>
+		    		<h5><a class="magic-hover magic-hover__square" href="blog-details-2.html">{{article.title}}</a></h5>
+	    </div>
+	    </div>
+        {% endfor %} 
+	  </div>
+	</div>
+</section>
