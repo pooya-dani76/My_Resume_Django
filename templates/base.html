@@ -1,0 +1,15 @@
+{% load render_partial %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Pooya Danadeh</title>
+    {% include "head.html" %}
+</head>
+<body class="menu-layer">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    {% block body %}{% endblock body %}
+    {% render_partial 'info_module.views.footer_view' %}
+    {% include 'bootstap_refrences.html' %}
+</body>
+</html>

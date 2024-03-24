@@ -1,0 +1,20 @@
+<!-- popup -->
+<div class="backdrop"></div>
+	<div class="box">
+		<div class="flex-img">
+		  <img alt="popup-img" src="https://via.placeholder.com/291x530">
+		  <div class="your-name">
+					<h5>Have Question?</h5>
+						<form class="one" action='{% url "home" %}' method="post" >
+							{% csrf_token %}
+							{% for field in form %}
+								{{field}}
+								{{field.errors}}
+							{% endfor %}
+							<button type="submit" class="button button--moema button--text-thick button--text-upper button--size-s">Send Message</button>
+						</form>
+					</div>
+					<div class="close"><i class="fa-solid fa-xmark"></i></div>
+		</div>
+	</div>
+<!-- popup end -->

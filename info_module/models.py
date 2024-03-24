@@ -8,6 +8,10 @@ class MyInfoModel(models.Model):
     years_experience = models.IntegerField(verbose_name="Experience(year)")
     satisfied_customers = models.IntegerField(verbose_name="Satisfied Customers")
     resume_file = models.FileField(upload_to='files/me', verbose_name="Resume")
+    linked_in = models.URLField(max_length=300, null=True, blank=True, verbose_name="Linkedin Url")
+    instagram = models.URLField(max_length=300, null=True, blank=True, verbose_name="Instagram Url")
+    twitter = models.URLField(max_length=300, null=True, blank=True, verbose_name="Twitter Url")
+    facebook = models.URLField(max_length=300, null=True, blank=True, verbose_name="Facebook Url")
     is_active = models.BooleanField(verbose_name="Is Active")
 
     def __str__(self):

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'experience_module',
     'home',
     'article_module',
+    'popup',
     # external
     'sorl.thumbnail',
     'django_render_partial'

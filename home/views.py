@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.views import View
 from django.http import HttpRequest
+from popup.forms import ContactForm
 
 # Create your views here.
 
@@ -10,7 +12,10 @@ def header_menu_view(request: HttpRequest):
 
 class HomeView(View):
     def post(self, request: HttpRequest):
-        pass
+        contact_form: ContactForm = ContactForm(request.POST or None)
+        if contact_form.is_valid():
+            contact_form.save()
+        return redirect(reverse('home'))    
 
     def get(self, request: HttpRequest):
         context = {}
