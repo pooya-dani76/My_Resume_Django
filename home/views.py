@@ -2,12 +2,12 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import View
 from django.http import HttpRequest
-from popup.forms import ContactForm
+from contact.forms import ContactForm
 
 # Create your views here.
 
 def header_menu_view(request: HttpRequest):
-    return render(request=request, template_name="includes/header_menu.html")
+    return render(request=request, template_name="header_menu.html")
 
 
 class HomeView(View):

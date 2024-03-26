@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<section id="particles-js" class="blog-detail pattern gap" style="background-image: url({% static 'img/footer.png' %})">
+	<div class="container">
+		<div class="blog-detail-data gap no-bottom">
+			<h2 data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">Contact Us</h2>
+		</div>
+	</div>
+</section>
+<section class="address gap">
+	<div class="container">
+		<div class="row">
+			{% if info.phone%}
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+				<div class="service-data">
+					<div class="svg-img">
+						<i class="icon-phone"></i>
+					</div>
+					<h5>Phone Number</h5>
+					<a class="magic-hover magic-hover__square" href="callto: +{{info.phone}}">+{{info.phone}}</a>
+				</div>
+			</div>
+            {% endif %}
+			{% if info.email %}
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="400">
+				<div class="service-data">
+					<div class="svg-img">
+						<i class="fa-solid fa-envelope"></i>
+					</div>
+					<h5>Email Address</h5>
+					<a class="magic-hover magic-hover__square" href="mailto:{{info.email}}">{{info.email}}</a>
+				</div>
+			</div>
+            {% endif %}
+			{% if info.address %}
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up"  data-aos-delay="400" data-aos-duration="500">
+				<div class="service-data">
+					<div class="svg-img">
+						<i class="icon-location-pin"></i>
+					</div>
+					<h5>Office Location</h5>
+					<p>{{info.address}}</p>
+				</div>
+			</div>{% endif %}
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="hading" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+			<p>Have Question Contact Us?</p>
+			<h2>Love to Hear From You, 
+				Get in Touch!</h2>
+		</div>
+		<div class="row">
+			<div class="offset-xl-1 col-xl-10 col-lg-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+				<div class="your-name contact" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+					<form class="one" action='{% url "contact-us" %}' method="post" >
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{field}}
+                            {{field.errors}}
+                        {% endfor %}
+                        <button type="submit" class="button button--moema button--text-thick button--text-upper button--size-s">Send Message</button>
+                    </form>
+				</div>
+			</div>
+		</div>
+		{% comment %} <div class="contact-map" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689446.104646556!2d28.705460424349365!3d48.83127549941125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2sUkraine!5e0!3m2!1sen!2s!4v1661009847728!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div> {% endcomment %}
+	</div>
+</section>
+{% endblock body %}

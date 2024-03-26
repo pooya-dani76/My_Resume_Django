@@ -1,9 +1,10 @@
-<footer class="gap" style="background-image: url(./static/img/footer.png)">
+{% load static %}
+
+<footer class="gap" style="background-image: url({% static 'img/footer.png' %})">
     <div class="container">
         <div class="footer-data">
             {% comment %} <img alt="log" src="static/img/orix-logo.png"> {% endcomment %}
-            <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris Morbi accumsan ipsuy
-                    a odio tincdunt ilmauctor Class aptent taciti sociosqu ads Etiam.</p>
+            <p>Other ways you can contact & follow me on social medias</p>
                     <ul class="social-media-footer">
                         <li><a class="magic-hover magic-hover__square" href={{info.facebook}}><i class="fa-brands fa-facebook-f fb"></i>Facebook</a></li>
                         <li><a class="magic-hover magic-hover__square" href={{info.twitter}}><i class="fa-brands fa-twitter tw"></i>Twitter</a></li>

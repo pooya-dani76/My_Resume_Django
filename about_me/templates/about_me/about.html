@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+{% load filters %}
+
+{% block body %}
+<section id="particles-js" class="blog-detail pattern gap" style="background-image: url({% static 'img/footer.png' %})">
+	<div class="container">
+		<div class="blog-detail-data gap no-bottom">
+			<h2 data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">About Us</h2>
+		</div>
+	</div>
+</section>
+
+<section id="about" class="about gap">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-sm-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+				<div class="about-mee">
+					<h2>About Me</h2>
+					<p>{{info.about_me}}</p>
+					
+					<ul class="social-media-icon"><li><a href="pdf/orix.pdf" class="button button--moema button--text-thick button--text-upper button--size-s" target="_blank"><i class="fa-solid fa-download"></i>Download CV</a></li>
+						<li><a class="f magic-hover magic-hover__square" href="{{info.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+						<li><a class="in magic-hover magic-hover__square" href="{{info.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+						<li><a class="t magic-hover magic-hover__square" href="{{info.twitter}}"><i class="fa-brands fa-twitter"></i></a></li>
+					</ul>
+					<ul class="age">
+						<li><h6>Age:<span>{{info.age}}</span></h6></li>
+						<li><h6>Residence:<span>{{info.country}}</span></h6></li>
+						<li><h6>E-mail:<span>{{info.email}}</span></h6></li>
+						<li><h6>Phone:<span>+{{info.phone}}</span></h6></li>
+						<li><h6>Freelance:<span>{% if info.available_for_freelancing %}Available{% else %}Not Available{% endif %}</span></h6></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="400">
+				<div class="progress-data">
+					<p>{{info.about_me_extra}} </p>
+						<div class="progress-bara-data">
+							<div class="row">
+								{% for ability in abilities %}
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="home-one-progress">
+										<div class="count-time">
+										<h2 class="timer count-title count-number" data-to="{{ability.mastery}}" data-speed="2000">{{ability.mastery}}</h2><span>%</span>
+										</div>
+										<h5>{{ability.name}}</h5>
+										<div class="meter cadetblue">
+											  <span data-progress="{{ability.mastery}}" style="width:0;"></span>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section> 
+<section class="my-resume gap">
+			<div class="container">
+				<div class="hading" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+					<img alt="dots" src="{% static 'img/dots.png' %}">
+					<p>Professional Experience</p>
+					<h2>My Resume</h2>
+				</div>
+			<div class="row">
+								<div class="col-lg-6 col-md-12 col-sm-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+								  <div class="resume-data">
+									<div class="headings resume">
+										<h3>Education</h3>
+									</div>
+									{% for education in educations %}
+									<div class="education">
+										<h5>{{education.start_year}} to {% if education.finish_year %}{{education.finish_year}}{% else %}Present{% endif %}</h5>
+										<p>{{education.degree | degree}}</p>
+										<div class="studies">
+											<h6>{{education.university}}</h6>
+											<p>{{education.short_description}}</p>
+										</div>
+									</div>
+									{% endfor %}
+								  </div>
+								</div>
+								
+								<div class="col-lg-6 col-md-12 col-sm-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+								  <div class="resume-data">
+									<div class="headings resume">
+										<h3>Experience</h3>
+									</div>
+									
+									{% for experience in experiences %}
+									<div class="education">
+										<h5>{{experience.start_year}} to {% if experience.finish_year %}{{experience.finish_year}}{% else %}Present{% endif %}</h5>
+										<p>{{experience.title}}</p>
+										<div class="studies">
+											<h6>{{experience.work_place}}</h6>
+											<p>{{experience.short_description}}</p>
+										</div>
+									</div>
+									{% endfor %}
+
+								</div>
+							  </div>
+							</div>
+		  </div>
+</section> 
+{% endblock body %}
+
+

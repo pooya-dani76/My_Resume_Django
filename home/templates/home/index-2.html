@@ -2,13 +2,21 @@
 {% load render_partial %}
 
 {% block body %}
-{% include "includes/loader.html" %}
-{% render_partial "home.views.header_menu_view" %}
 {% render_partial "info_module.views.intro_view" %}
 {% render_partial "services_module.views.services_view" %}
 {% render_partial "showcase_module.views.workcase_view" %}
+<section class="creative-together gap no-top" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300"> 
+	<div class="container">
+		<div class="gap contact-info-home-two" style="background-image: url(./static/img/footer.png)">
+			<h2>Let's Create Something
+					Creative Together</h2>
+			<p>We can't wait to hear from making something beautiful and new! </p>
+			<a href="javascript:void(0)" class="lightbox-toggle  magic-hover magic-hover__square button download  button--moema button--text-thick button--text-upper button--size-s"><i class="fa-solid fa-download"></i>Start Consulting</a>
+		</div>
+	</div>
+</section>
 {% render_partial "experience_module.views.work_experience_view" %}
 {% comment %} {% render_partial "article_module.views.articles_view" %} {% endcomment %}
 
-{% render_partial "popup.views.consult_popup_view" %} #TODO popup
+{% render_partial "contact.views.consult_popup_view" %}
 {% endblock %}

@@ -17,3 +17,13 @@ def number_to_character(value:int):
         0: "ten",
     }
     return numbers[value+1]
+
+
+@register.filter(name="degree")
+def degree(value:int):
+    numbers = {
+        1: "High School",
+        2: "Bachelor Degree",
+        3: "Master Degree",
+    }
+    return numbers[value]
