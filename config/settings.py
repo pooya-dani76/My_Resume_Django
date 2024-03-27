@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'article_module',
     'contact',
     'about_me',
+    'portfolios',
     # external
     'sorl.thumbnail',
     'django_render_partial'

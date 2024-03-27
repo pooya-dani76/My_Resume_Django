@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block body %}
+<section id="particles-js" class="blog-detail pattern gap" style="background-image: url({% static 'img/footer.png' %})">
+	<div class="container">
+		<div class="blog-detail-data gap no-bottom">
+			<h2 data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">{{object.title}}</h2>
+		</div>
+	</div>
+</section>
+<section class="blog-details-one gap no-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+				<div class="photography portfolio-two">
+					<h3>{{object.title}}</h3>
+					  <ul class="client-info">
+
+						   <li class="client-data">
+								<i class="icon-info"></i>
+								<div>
+									<h4>Technology:</h4>
+									<h6>{{object.main_technology}}</h6>
+								</div>	
+							</li>
+
+							<li class="client-data">
+								<i class="icon-tag"></i>
+								<div>
+									<h4>Category:</h4>
+									<h6>{{object.category}}</h6>
+								</div>	
+							</li>
+
+							<li class="client-data">
+								<i class="icon-calendar"></i>
+								<div>
+									<h4>Date:</h4>
+									<h6>{{object.date}}</h6>
+								</div>	
+							</li>
+
+							<li class="client-data">
+								<i class="icon-layers"></i>
+								<div>
+									<h4>Code Available:</h4>
+									<h6>{% if object.link %} Yes {% else %} No {% endif %}</h6>
+
+								</div>	
+							</li>
+							
+							{% if object.link %}
+							<a href="{{object.link}}" class="magic-hover magic-hover__square button load button--moema button--text-thick button--text-upper button--size-s" target="_blank"><i class="fa-brands fa-github"></i>View on Github</a>
+							{% endif %}
+					  </ul>
+					  <h3>Description</h3>
+					  <p>{{object.description}}</p>
+					 <div class="provide portfolio-data">
+				</div>
+				</div>
+			</div>
+			<div class="col-lg-6" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="400">
+				<div class="img-data-portfolio img-size-one hover06">
+					<figure>
+						{% thumbnail object.image "366x261" crop="center" as im %}
+                    		<img src="{{ im.url }}" />
+                		{% endthumbnail %}
+					</figure>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock body %}

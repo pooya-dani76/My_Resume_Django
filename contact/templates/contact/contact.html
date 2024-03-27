@@ -4,7 +4,7 @@
 <section id="particles-js" class="blog-detail pattern gap" style="background-image: url({% static 'img/footer.png' %})">
 	<div class="container">
 		<div class="blog-detail-data gap no-bottom">
-			<h2 data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">Contact Us</h2>
+			<h2 data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">Contact Me</h2>
 		</div>
 	</div>
 </section>
@@ -49,14 +49,14 @@
 <section>
 	<div class="container">
 		<div class="hading" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
-			<p>Have Question Contact Us?</p>
+			<p>Have Question Contact Me?</p>
 			<h2>Love to Hear From You, 
 				Get in Touch!</h2>
 		</div>
 		<div class="row">
 			<div class="offset-xl-1 col-xl-10 col-lg-12" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
 				<div class="your-name contact" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
-					<form class="one" action='{% url "contact-us" %}' method="post" >
+					<form class="one" action='{% url "contact-me" %}' method="post" >
                         {% csrf_token %}
                         {% for field in form %}
                             {{field}}

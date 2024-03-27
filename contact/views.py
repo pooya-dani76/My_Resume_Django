@@ -24,4 +24,4 @@ class ContactUsView(View):
         contact_form: ContactForm = ContactForm(request.POST or None)
         if contact_form.is_valid():
             contact_form.save()
-        return redirect(reverse('contact-us'))  
+        return redirect(reverse('contact-me'))  

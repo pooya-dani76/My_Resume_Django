@@ -4511,6 +4511,7 @@ header.two a.bar-menu {
     border: 1px solid #4e1edf;
     background-color: transparent;
 }
+
 .pagination ul li.prev a{
      transition: .3s ease-in-out;
 }

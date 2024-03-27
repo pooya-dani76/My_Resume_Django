@@ -1,0 +1,7 @@
+asgiref==3.8.0
+Django==5.0.3
+django-render-partial==0.4
+pillow==10.2.0
+sorl-thumbnail==12.10.0
+sqlparse==0.4.4
+typing_extensions==4.10.0

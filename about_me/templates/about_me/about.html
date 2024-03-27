@@ -19,7 +19,7 @@
 					<h2>About Me</h2>
 					<p>{{info.about_me}}</p>
 					
-					<ul class="social-media-icon"><li><a href="pdf/orix.pdf" class="button button--moema button--text-thick button--text-upper button--size-s" target="_blank"><i class="fa-solid fa-download"></i>Download CV</a></li>
+					<ul class="social-media-icon"><li><a href="{% url 'download-resume' %}" class="button button--moema button--text-thick button--text-upper button--size-s" target="_blank"><i class="fa-solid fa-download"></i>Download CV</a></li>
 						<li><a class="f magic-hover magic-hover__square" href="{{info.facebook}}"><i class="fa-brands fa-facebook-f"></i></a></li>
 						<li><a class="in magic-hover magic-hover__square" href="{{info.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
 						<li><a class="t magic-hover magic-hover__square" href="{{info.twitter}}"><i class="fa-brands fa-twitter"></i></a></li>

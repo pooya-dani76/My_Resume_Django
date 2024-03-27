@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<section id="particles-js" class="blog-detail pattern gap" style="background-image: url({% static 'img/footer.png' %})">
+	<div class="container">
+		<div class="blog-detail-data gap no-bottom">
+			<h2 data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">Portfolios</h2>
+		</div>
+	</div>
+</section>
+<section class="my-project hom3 two gap no-top">
+    <br>
+	<div class="container">
+		<div class="hading" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="300">
+			<img alt="dots" src="{% static 'img/dots.png' %}">
+			<p>Collection of my project</p>
+			<h2>Work Showcase</h2>
+		</div>
+			<div class="row">
+
+                {% for work in works %}
+                {% include 'includes/showcase_item.html' with work=work %}
+
+                {% endfor %}
+                    
+			</div>
+            <form action="" method="get" id="page_form">
+                <input type="hidden" name="page" id="page" value="{{ page_obj.number }}">
+            </form>
+             <div class="pagination">
+                <ul>
+                    {% if page_obj.has_previous %}
+                    <li class="prev">
+                        <a onclick="fillPage({{ page_obj.previous_page_number }})">prev</a>
+                    </li>
+                    {% endif %}
+                    {% for pageNumber in paginator.page_range %}
+                    <li class="{% if page_obj.number == pageNumber %} prev {% endif %}"><a class="{% if page_obj.number == pageNumber %} whiteText {% endif %}" onclick="fillPage({{ pageNumber }})">{{pageNumber}}</a></li>
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                    <li class="prev">
+                        <a onclick="fillPage({{ page_obj.next_page_number  }})">next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+	  </div>
+</section>
+{% endblock body %}
